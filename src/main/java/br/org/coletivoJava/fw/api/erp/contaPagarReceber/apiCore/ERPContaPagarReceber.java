@@ -11,7 +11,6 @@ package br.org.coletivoJava.fw.api.erp.contaPagarReceber.apiCore;
  */
 import com.super_bits.modulosSB.SBCore.modulos.erp.ApiERPColetivoJavaFW;
 import com.super_bits.modulosSB.SBCore.modulos.erp.ItfApiErpSuperBits;
-import br.org.coletivoJava.fw.api.erp.contaPagarReceber.apiCore.ItfERPContaPagarReceber;
 
 @ApiERPColetivoJavaFW(descricaoApi = "Codigo Postal BR", nomeApi = "ContaPagarReceber", slugInicial = "CtPagarReceber")
 public enum ERPContaPagarReceber implements ItfApiErpSuperBits<ItfERPContaPagarReceber> {
@@ -22,6 +21,7 @@ public enum ERPContaPagarReceber implements ItfApiErpSuperBits<ItfERPContaPagarR
 
     @Override
     public Class<? extends ItfERPContaPagarReceber> getInterface() {
+
         return ItfERPContaPagarReceber.class;
     }
 }

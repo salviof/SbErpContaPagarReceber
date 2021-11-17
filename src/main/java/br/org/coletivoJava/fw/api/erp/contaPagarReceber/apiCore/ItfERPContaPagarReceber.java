@@ -1,11 +1,11 @@
 package br.org.coletivoJava.fw.api.erp.contaPagarReceber.apiCore;
 
-import br.org.coletivoJava.fw.api.erp.contaPagarReceber.model.faturamento.ItfFatura;
-import br.org.coletivoJava.fw.api.erp.contaPagarReceber.model.regsitroCobranca.ItfRegistroCobranca;
-import br.org.coletivoJava.fw.api.erp.contaPagarReceber.model.regsitroCobranca.ItfRegistroCobrancaAssinatura;
-import br.org.coletivoJava.fw.api.erp.contaPagarReceber.model.valormoedaFuturo.ItfValorMoedaFuturo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.financeiro.ItfPessoaFisicoJuridico;
 import java.util.List;
+import br.org.coletivoJava.fw.api.erp.contaPagarReceber.model.assinatura.ItfFaturaAssinatura;
+import br.org.coletivoJava.fw.api.erp.contaPagarReceber.model.valormoedaFuturo.ItfPrevisaoValorMoeda;
+import br.org.coletivoJava.fw.api.erp.contaPagarReceber.model.valormoedaFuturo.ItfPrevisaoValorMoedaRecorrente;
+import java.util.Date;
 
 /**
  * @author desenvolvedorninja01
@@ -14,20 +14,22 @@ import java.util.List;
  */
 public interface ItfERPContaPagarReceber {
 
-    public ItfRegistroCobranca getRegistroCobranca(ItfValorMoedaFuturo pValor);
+    public ItfPrevisaoValorMoeda getCobrancaSazonal(Date pDataVencimento, double pValor, ItfPessoaFisicoJuridico pDevedor);
 
-    public ItfRegistroCobrancaAssinatura getRegistroAssinatura(ItfFatura pFaturaRecorrente);
+    public ItfPrevisaoValorMoedaRecorrente getCobrancaAssinatura(Date pDataVencimento, double pValor, ItfPessoaFisicoJuridico pDevedor);
 
-    public List<ItfRegistroCobranca> getRegistrosEmAberto(ItfPessoaFisicoJuridico pPessoas);
+    public ItfFaturaAssinatura getAssinatura(ItfFaturaAssinatura pFaturaRecorrente);
 
-    public List<ItfRegistroCobrancaAssinatura> getAssinaturasAtivas(ItfPessoaFisicoJuridico pPessoas);
+    public List<ItfPrevisaoValorMoeda> getCobrancasSazonaisEmAberto(ItfPessoaFisicoJuridico pPessoas);
 
-    public List<ItfPessoaFisicoJuridico> getClientesRegistrados();
+    public List<ItfFaturaAssinatura> getAssinaturasAtivas(ItfPessoaFisicoJuridico pPessoas);
 
-    public List<ItfPessoaFisicoJuridico> getDevedorByCNPJ(String pCNPJ);
+    public List<ItfPessoaFisicoJuridico> getDevedoresRegistrados();
 
-    public List<ItfPessoaFisicoJuridico> getDevedorByIdExterno(String pCNPJ);
+    public ItfPessoaFisicoJuridico getDevedorByCNPJ(String pCNPJ);
 
-    public List<ItfPessoaFisicoJuridico> getDevedorByIdAplicacao(int pId);
+    public List<ItfPessoaFisicoJuridico> getDevedorByIdExterno(String pIDplataforma);
+
+    public List<ItfPessoaFisicoJuridico> getDevedorByIdAplicacao(int pIdLocal);
 
 }

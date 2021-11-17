@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.org.coletivoJava.fw.api.erp.contaPagarReceber.model.valormoedaFuturo;
+package br.org.coletivoJava.fw.api.erp.contaPagarReceber.model.assinatura;
 
 import br.org.coletivoJava.fw.api.erp.contaPagarReceber.model.faturamento.ItfFatura;
 
@@ -11,11 +11,10 @@ import br.org.coletivoJava.fw.api.erp.contaPagarReceber.model.faturamento.ItfFat
  *
  * @author sfurbino
  */
-public interface ItfContaPagarParcela extends ItfContaPagar {
+public interface ItfFaturaAssinatura extends ItfFatura {
 
-    public ItfFatura getFatura();
+    public double getValorAtualMensal();
 
-    public double getParcelaNumero();
+    public boolean isAtivo();
 
-    public void setParcelaNumero(double parcelaNumero);
 }

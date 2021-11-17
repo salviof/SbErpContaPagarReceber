@@ -5,25 +5,24 @@
  */
 package br.org.coletivoJava.fw.api.erp.contaPagarReceber.model.valormoedaFuturo;
 
+import br.org.coletivoJava.fw.api.erp.contaPagarReceber.model.faturamento.ItfFatura;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoCampo;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoObjetoSB;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabTipoAtributoObjeto;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimples;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.financeiro.ItfPessoaFisicoJuridico;
 
 /**
+ *
  * @author sfurbino
  * @since 19/02/2020
  * @version 1.0
  */
-public interface ItfContaReceber extends ItfValorMoedaFuturo {
+@InfoObjetoSB(plural = "Contas à pagar", tags = "Conta à pagar")
+public interface ItfPrevisaoPagar extends ItfPrevisaoValorMoeda, ItfBeanSimples {
 
     @InfoCampo(tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA)
-    public ItfPessoaFisicoJuridico getDevedor();
+    public ItfPessoaFisicoJuridico getCredor();
 
-    public default ItfContaReceberRecorrente getComoMensalidade() {
-        return (ItfContaReceberRecorrente) this;
-    }
-
-    public default ItfContaReceber getComoSazonal() {
-        return (ItfContaReceber) this;
-    }
+    public ItfFatura getFatura();
 }

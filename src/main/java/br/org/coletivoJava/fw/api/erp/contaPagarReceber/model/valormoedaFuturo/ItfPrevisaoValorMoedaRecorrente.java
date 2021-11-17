@@ -5,10 +5,13 @@
  */
 package br.org.coletivoJava.fw.api.erp.contaPagarReceber.model.valormoedaFuturo;
 
+import br.org.coletivoJava.fw.api.erp.contaPagarReceber.model.assinatura.ItfFaturaAssinatura;
+
 /**
  *
  * @author sfurbino
  */
-public interface ItfContaReceberRecorrente extends ItfContaReceber {
+public interface ItfPrevisaoValorMoedaRecorrente extends ItfPrevisaoValorMoeda {
 
+    public ItfFaturaAssinatura getFatura();
 }

@@ -17,7 +17,7 @@ import java.util.Date;
  * @version 1.0
  */
 @InfoObjetoSB(tags = "Previsao Recurso futuro", plural = "Previsoes de Recursos futuros")
-public interface ItfValorMoedaFuturo extends ItfBeanSimples {
+public interface ItfPrevisaoValorMoeda extends ItfBeanSimples {
 
     @InfoCampo(tipo = FabTipoAtributoObjeto.MOEDA_REAL)
     public double getValor();
