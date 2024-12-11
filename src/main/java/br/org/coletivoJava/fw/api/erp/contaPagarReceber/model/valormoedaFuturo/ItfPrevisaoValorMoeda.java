@@ -22,6 +22,10 @@ public interface ItfPrevisaoValorMoeda extends ItfBeanSimples {
     @InfoCampo(tipo = FabTipoAtributoObjeto.MOEDA_REAL)
     public double getValor();
 
+    public String getPix();
+
+    public String getPDFCobranca();
+
     @InfoCampo(tipo = FabTipoAtributoObjeto.MOEDA_REAL)
     public double getValorRealizado();
 

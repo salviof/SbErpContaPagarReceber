@@ -5,6 +5,7 @@ import java.util.List;
 import br.org.coletivoJava.fw.api.erp.contaPagarReceber.model.assinatura.ItfFaturaAssinatura;
 import br.org.coletivoJava.fw.api.erp.contaPagarReceber.model.valormoedaFuturo.ItfPrevisaoValorMoeda;
 import br.org.coletivoJava.fw.api.erp.contaPagarReceber.model.valormoedaFuturo.ItfPrevisaoValorMoedaRecorrente;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ItfLocalPostagem;
 import java.util.Date;
 
 /**
@@ -12,13 +13,13 @@ import java.util.Date;
  * @since 16/10/2019
  * @version 1.0
  */
-public interface ItfERPContaPagarReceber {
+public interface ItfERPContabilAReceber {
 
     public ItfPrevisaoValorMoeda getCobrancaSazonal(Date pDataVencimento, double pValor, ItfPessoaFisicoJuridico pDevedor);
 
     public ItfPrevisaoValorMoedaRecorrente getCobrancaAssinatura(Date pDataVencimento, double pValor, ItfPessoaFisicoJuridico pDevedor);
 
-    public ItfFaturaAssinatura getAssinatura(ItfFaturaAssinatura pFaturaRecorrente);
+    public ItfFaturaAssinatura getAssinatura(double pValor, ItfPessoaFisicoJuridico pDevedor);
 
     public List<ItfPrevisaoValorMoeda> getCobrancasSazonaisEmAberto(ItfPessoaFisicoJuridico pPessoas);
 
@@ -31,5 +32,7 @@ public interface ItfERPContaPagarReceber {
     public List<ItfPessoaFisicoJuridico> getDevedorByIdExterno(String pIDplataforma);
 
     public List<ItfPessoaFisicoJuridico> getDevedorByIdAplicacao(int pIdLocal);
+
+    public ItfLocalPostagem getLocalizacaoByDocumento(String pLocalizacao);
 
 }

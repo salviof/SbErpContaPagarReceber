@@ -6,7 +6,7 @@
 package br.org.coletivoJava.testes.erp;
 
 import br.org.coletivoJava.fw.api.erp.codigoPostal.br.ERPCodigoPostalBR;
-import br.org.coletivoJava.fw.api.erp.contaPagarReceber.apiCore.ERPContaPagarReceber;
+import br.org.coletivoJava.fw.api.erp.contaPagarReceber.apiCore.ERPContabilAReceber;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 //import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import org.apache.logging.log4j.LogManager;
@@ -26,7 +26,7 @@ public class CriarAnoacoes {
 
         try {
             SBCore.configurar(new ConfigCoreApiERPContaPagarReceber(), SBCore.ESTADO_APP.DESENVOLVIMENTO);
-            for (ERPContaPagarReceber trassp : ERPContaPagarReceber.values()) {
+            for (ERPContabilAReceber trassp : ERPContabilAReceber.values()) {
 
                 GeradorAPIERP gerador = new GeradorAPIERP(trassp);
                 gerador.salvarEmDiretorioPadraoSubstituindoAnterior();

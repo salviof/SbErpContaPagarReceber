@@ -13,15 +13,15 @@ import com.super_bits.modulosSB.SBCore.modulos.erp.ApiERPColetivoJavaFW;
 import com.super_bits.modulosSB.SBCore.modulos.erp.ItfApiErpSuperBits;
 
 @ApiERPColetivoJavaFW(descricaoApi = "Codigo Postal BR", nomeApi = "ContaPagarReceber", slugInicial = "CtPagarReceber")
-public enum ERPContaPagarReceber implements ItfApiErpSuperBits<ItfERPContaPagarReceber> {
+public enum ERPContabilAReceber implements ItfApiErpSuperBits<ItfERPContabilAReceber> {
 
     GALAX_PAY,
     PAGUE_SEGURO,
-    COLETIVO_JAVA_SERVICES,;
+    COLETIVO_JAVA_SERVICES;
 
     @Override
-    public Class<? extends ItfERPContaPagarReceber> getInterface() {
+    public Class<? extends ItfERPContabilAReceber> getInterface() {
 
-        return ItfERPContaPagarReceber.class;
+        return ItfERPContabilAReceber.class;
     }
 }
