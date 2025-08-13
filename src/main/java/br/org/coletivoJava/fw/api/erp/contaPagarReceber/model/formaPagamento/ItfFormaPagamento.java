@@ -15,7 +15,7 @@ public interface ItfFormaPagamento {
 
     public String getIcone();
 
-    public int getId();
+    public Long getId();
 
     public String getNome();
 
@@ -23,7 +23,7 @@ public interface ItfFormaPagamento {
 
     public void setIcone(String icone);
 
-    public void setId(int id);
+    public void setId(Long id);
 
     public void setNome(String nome);
 

@@ -10,7 +10,7 @@ package br.org.coletivoJava.fw.api.erp.contaPagarReceber.model.planoAssinatura;
  */
 public interface ItfPlanoAssinatura {
 
-    public int getId();
+    public Long getId();
 
     public double getValorPlano();
 
